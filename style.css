@@ -53,6 +53,7 @@ header h4
     border-width: 1px;
     margin: 10px 0 0 0;
     background-color: white;
+    border-style: solid;
 }
 
 .search-div i
