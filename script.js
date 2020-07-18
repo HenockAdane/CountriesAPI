@@ -5,11 +5,19 @@ document.querySelector("#theme-btn").addEventListener("click", (e) =>{
         for(let i=0; i <document.querySelectorAll(".country").length; i++){
             document.querySelectorAll(".country")[i].style.color = "black";
         }
+        document.querySelector("#theme-btn").innerHTML = '<i class="fas fa-moon">Dark Mode</i>';
+        document.querySelector("#theme-btn").style.backgroundColor = "white";
+        document.querySelector("#theme-btn").style.color = "black";
+
+
 
     }
 
     else {document.body.style.backgroundColor = "black"
     document.body.style.color = "white"
+    document.querySelector("#theme-btn").innerHTML = '<i class="fas fa-sun">Light Mode</i>';
+    document.querySelector("#theme-btn").style.backgroundColor = "black";
+    document.querySelector("#theme-btn").style.color = "white";
     for(let i=0; i <document.querySelectorAll(".country").length; i++){
         document.querySelectorAll(".country")[i].style.color = "white";
     }}
