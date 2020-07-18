@@ -93,9 +93,17 @@ document.querySelector("main").addEventListener("click", (e) =>{
     if (e.target.parentElement.classList.contains("country") || e.target.classList.contains("country")){
         document.querySelector("main").style.display = "none";
         document.querySelector(".more-info").style.display = "block"
+        document.querySelector(".search-div").style.display = "none"
         
         
     }
     
+})
+
+document.querySelector(".back").addEventListener("click", (e)=>{
+    e.preventDefault();
+    document.querySelector("main").style.display = "flex"
+    document.querySelector(".more-info").style.display = "none"
+    document.querySelector(".search-div").style.display = "flex"
 })
  console.log(1)
