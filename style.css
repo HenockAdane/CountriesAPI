@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap');
+
+*
+{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body
+{
+    min-height: 100vh;
+    font-family:  Nunito Sans;
+    
+  
+}
+
+header
+{
+    border-style: solid;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 7vh;
+    border-color: blue;
+}
+
+#theme-btn
+{
+    padding: 5px;
+}
+
+.search-div
+{
+    border-style: solid;
+    display: flex;
+    justify-content: center;
+}
+
+#search
+{
+    border-style: solid;
+    display: block;
+    width: 50%;
+    padding: 10px;
+}
+
+main
+{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.container
+{
+    /* border-style: solid; */
+    /* max-width: 1110px; */
+    /* height: 740px; */
+    display: grid;
+    gap: 30px;
+    grid-template-columns: repeat(4, 1fr);
+    margin: 20px 0 0 0;
+    
+    /* background-color: hsl(230, 17%, 14%); */
+}
+
+
+.country
+{
+    border-style: solid;
+    text-decoration: none;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    width: 20vw;
+}
+
+.country img
+{
+    width: 100%;
+    display: block;
+}
+
+.country h4
+{
+    margin: 0 0 0 10px
+}
+
+.country p
+{
+    margin: 5px 0 5px 10px;
+   
+}
