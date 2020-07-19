@@ -17,6 +17,11 @@ body
   
 }
 
+.dark-mode
+{
+    color:white;
+}
+
 header
 {
     
@@ -110,7 +115,7 @@ main
     border-style: solid;
     border-width: 1px;
     text-decoration: none;
-    color: black;
+    color: unset;
     display: flex;
     flex-direction: column;
 }
@@ -141,18 +146,27 @@ main
 
 
 
-.back
+#back
 {
     display: block;
     margin: 10px 0 10px 0;
+    padding: 5px 10px;
 }
 
 .flex
 {
     display: flex;
-    border-style: solid;
-    justify-content: space-between;
+    align-items: center;
+    justify-content: space-evenly;
     flex-wrap: wrap;
+}
+
+.flex img
+{
+    border-style: solid;
+    border-width: 1px;
+    border-color: white;
+
 }
 
 .more-info
@@ -162,14 +176,19 @@ main
 
 .more-info img
 {
-    width: 45%;
+    width: 40%;
 }
 
 
 .info
 {
-    border-style: solid;
-    width: 55%;
+    width: 50%;
+    margin: 0 0 0 10px;
+}
+
+.info h3
+{
+    margin: 10px 0 10px 0;
 }
 
 li
@@ -178,6 +197,7 @@ li
     justify-content: space-between;
     width: 100%;
     flex-wrap: wrap;
+    margin: 25px 0 25px 0;
 }
 
 
@@ -203,22 +223,26 @@ li
 
     .info
     {
-        border-style: solid;
         width: 100%;
+    }
+
+    li
+    {
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: unset;
+        margin: 0;
+    }
+
+    li p
+    {
+        margin: 10px 0 10px 0;
     }
 }
 
 @media (max-width: 400px){
     .container{
         grid-template-columns: repeat(1, 1fr);        
-    }
-
-    
-    li
-    {
-        flex-direction: column;
-        flex-wrap: wrap;
-        margin: 2px 0 2px 0;
     }
 }
 
