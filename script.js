@@ -74,19 +74,7 @@ let countries = document.querySelectorAll(".country");
 
 
 
-// for (let i=0; i < , i++){
-//     countries[i].addEventListener("click", (e)=>{
-//         e.preventDefault();
-//         console.log("testing")
-//     })
-// }
 
-for(let i=0; i <countries.length; i++){
-    countries[i].addEventListener("click", (e)=>{
-                e.preventDefault();
-                console.log("testing")
-            })
-}
 
 num = 0;
 document.querySelector("main").addEventListener("click", (e) =>{
@@ -124,10 +112,17 @@ document.querySelector("main").addEventListener("click", (e) =>{
                 languages += `${l.name},`
             })
 
-            let borders = "";
-            a.borders.forEach((border)=>{
-                fetch(`https://restcountries.eu/rest/v2/alpha/${border}`).then(res1 => res1.json()).then(data2 => {
-                    borders += ` ${data2.name},`
+//             let borders = "";
+//             a.borders.forEach((border)=>{
+//                 fetch(`https://restcountries.eu/rest/v2/alpha/${border}`).then(res1 => res1.json()).then(data2 => {
+//                     borders += ` ${data2.name},`
+
+
+//                 })
+                
+                
+//             })
+            // console.log(borders)
                     document.querySelector(".flex").innerHTML = `
                     <img src=${a.flag}>
              
@@ -155,13 +150,6 @@ document.querySelector("main").addEventListener("click", (e) =>{
                         <li><p><strong>Border Countries:</strong>${borders} </p></li>
                     </ul>
                 </div>`
-
-                })
-                
-                
-            })
-            // console.log(borders)
-
 
 
 
