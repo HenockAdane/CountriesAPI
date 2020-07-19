@@ -147,7 +147,6 @@ document.querySelector("main").addEventListener("click", (e) =>{
             
                         <li><p><strong>Capital:</strong> ${a.capital}</p></li>
 
-                        <li><p><strong>Border Countries:</strong>${borders} </p></li>
                     </ul>
                 </div>`
 
