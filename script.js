@@ -27,9 +27,16 @@ let search = document.querySelector("#search")
 
 let container = document.querySelector(".container");
 
+function numFormat(num)  {
+    var num_parts = num.toString().split(".");
+    num_parts[0] = num_parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    return num_parts.join(".");
+  }
+
+
 fetch(`https://restcountries.eu/rest/v2/all`).then(res => res.json()).then(data => {
 
-let output = ""
+let output = "";
     data.forEach((a) =>{
 
         let aTag = document.createElement("a");
@@ -46,7 +53,7 @@ let output = ""
         let p2 = document.createElement("p");
         let p3 = document.createElement("p");
         
-        p1.textContent = `Population: ${a.population}`
+        p1.textContent = `Population: ${numFormat(a.population)}`
         p2.textContent = `Region:${a.region}`
         p3.textContent = `Capital: ${a.capital}`
 
@@ -145,6 +152,8 @@ document.querySelector("main").addEventListener("click", (e) =>{
             
             })
 
+            
+
             let languages = "";
             a.languages.forEach((l)=>{
                 languages += `${l.name},`
@@ -173,6 +182,8 @@ document.querySelector("main").addEventListener("click", (e) =>{
             // let p3.5 = document.createElement("p");
             // let p4 = document.createElement("p");
             // let p4 = document.createElement("p");
+
+     
             
             document.querySelector(".flex").innerHTML = `
             <img src=${a.flag}>
@@ -187,7 +198,7 @@ document.querySelector("main").addEventListener("click", (e) =>{
                 </li>
     
                 <li>
-                    <p><strong>Population:</strong> ${a.population}</p><p><strong>Currencies:</strong> ${currencies}</p>
+                    <p><strong>Population:</strong> ${numFormat(a.population)}</p><p><strong>Currencies:</strong> ${currencies}</p>
                 </li>
     
                 <li>
@@ -223,4 +234,4 @@ document.querySelector("#back").addEventListener("click", (e)=>{
  
 gsap.from("body", {y:"-100%", duration: 1.5})
 
-// .from(".header", {y:"-100%", ease:"bounce"})
+
