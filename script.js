@@ -202,6 +202,7 @@ document.querySelector("main").addEventListener("click", (e) =>{
 
         })
     })
+    gsap.from(".more-info", {x:"-100%", duration: 1.5})
 
     
     
@@ -219,3 +220,7 @@ document.querySelector("#back").addEventListener("click", (e)=>{
 })
 
  console.log(1)
+ 
+gsap.from("body", {y:"-100%", duration: 1.5})
+
+// .from(".header", {y:"-100%", ease:"bounce"})
