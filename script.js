@@ -31,16 +31,43 @@ fetch(`https://restcountries.eu/rest/v2/all`).then(res => res.json()).then(data 
 
 let output = ""
     data.forEach((a) =>{
+
+        let aTag = document.createElement("a");
+        aTag.classList.add("country");
+        aTag.setAttribute("href", "#");
+
+        let img = document.createElement("img");
+        img.setAttribute("src", a.flag);
+
+        let h4 = document.createElement("h4");
+        h4.textContent = a.name
+
+        let p1 = document.createElement("p");
+        let p2 = document.createElement("p");
+        let p3 = document.createElement("p");
         
-        output += ` <a class="country" href="#">
-        <img src = ${a.flag}>
-        <h4>${a.name}</h4>
-        <p>Population: ${a.population}</p>
-        <p>Region:${a.region}</p>
-        <p>Capital: ${a.capital}</p>
-       </a>
-`
-        container.innerHTML = output;
+        p1.textContent = `Population: ${a.population}`
+        p2.textContent = `Region:${a.region}`
+        p3.textContent = `Capital: ${a.capital}`
+
+        aTag.appendChild(img);
+        aTag.appendChild(h4)
+        aTag.appendChild(p1)
+        aTag.appendChild(p2)
+        aTag.appendChild(p3)
+        
+//         output += ` <a class="country" href="#">
+//         <img src = ${a.flag}>
+//         <h4>${a.name}</h4>
+//         <p>Population: ${a.population}</p>
+//         <p>Region:${a.region}</p>
+//         <p>Capital: ${a.capital}</p>
+//        </a>
+// `
+//         container.innerHTML = output;
+
+            output += aTag;
+            container.appendChild(aTag)
     })
 })
 
@@ -74,9 +101,20 @@ let countries = document.querySelectorAll(".country");
 
 
 
+// for (let i=0; i < , i++){
+//     countries[i].addEventListener("click", (e)=>{
+//         e.preventDefault();
+//         console.log("testing")
+//     })
+// }
 
+for(let i=0; i <countries.length; i++){
+    countries[i].addEventListener("click", (e)=>{
+                e.preventDefault();
+                console.log("testing")
+            })
+}
 
-num = 0;
 document.querySelector("main").addEventListener("click", (e) =>{
     e.preventDefault();
 
@@ -112,45 +150,55 @@ document.querySelector("main").addEventListener("click", (e) =>{
                 languages += `${l.name},`
             })
 
-//             let borders = "";
-//             a.borders.forEach((border)=>{
-//                 fetch(`https://restcountries.eu/rest/v2/alpha/${border}`).then(res1 => res1.json()).then(data2 => {
-//                     borders += ` ${data2.name},`
-
-
-//                 })
-                
-                
-//             })
+            // let borders = "";
+            // a.borders.forEach((border)=>{
+            //     fetch(`https://restcountries.eu/rest/v2/alpha/${border}`).then(res1 => res1.json()).then(data2 => console.log(data2.name))
+            // })
             // console.log(borders)
-                    document.querySelector(".flex").innerHTML = `
-                    <img src=${a.flag}>
-             
-            
-                <div class="info">
-                    <h3>${a.name}</h3>
-            
-                    <ul>
-                        <li>
-                            <p><strong>Native Name:</strong> ${a.nativeName}</p><p><strong>Top Level Domain:</strong> ${a.topLevelDomain}</p>
-                        </li>
-            
-                        <li>
-                            <p><strong>Population:</strong> ${a.population}</p><p><strong>Currencies:</strong> ${currencies}</p>
-                        </li>
-            
-                        <li>
-                            <p><strong>Region:</strong> ${a.region}</p><p><strong>Languages:</strong> ${languages}</p>
-                        </li>
-            
-                        <li><p><strong>Sub Region:</strong> ${a.subregion}</p></li>
-            
-                        <li><p><strong>Capital:</strong> ${a.capital}</p></li>
 
-                    </ul>
-                </div>`
+            // let img = document.createElement("img");
+            // img.src= a.flag;
 
+            // let li1 = document.createElement("li")
+            // let li1 = document.createElement("li")
+            // let li1 = document.createElement("li")
+            // let li1 = document.createElement("li")
+            // let li1 = document.createElement("li")
 
+            // let p1 = document.createElement("p");
+            // let p1.5 = document.createElement("p");
+            // let p2 = document.createElement("p");
+            // let p2.5 = document.createElement("p");
+            // let p3 = document.createElement("p");
+            // let p3.5 = document.createElement("p");
+            // let p4 = document.createElement("p");
+            // let p4 = document.createElement("p");
+            
+            document.querySelector(".flex").innerHTML = `
+            <img src=${a.flag}>
+     
+    
+        <div class="info">
+            <h3>${a.name}</h3>
+    
+            <ul>
+                <li>
+                    <p><strong>Native Name:</strong> ${a.nativeName}</p><p><strong>Top Level Domain:</strong> ${a.topLevelDomain}</p>
+                </li>
+    
+                <li>
+                    <p><strong>Population:</strong> ${a.population}</p><p><strong>Currencies:</strong> ${currencies}</p>
+                </li>
+    
+                <li>
+                    <p><strong>Region:</strong> ${a.region}</p><p><strong>Languages:</strong> ${languages}</p>
+                </li>
+    
+                <li><p><strong>Sub Region:</strong> ${a.subregion}</p></li>
+    
+                <li><p><strong>Capital:</strong> ${a.capital}</p></li>
+            </ul>
+        </div>`
 
         })
     })
